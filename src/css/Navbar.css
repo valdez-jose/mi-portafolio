@@ -1,0 +1,78 @@
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; /* más bajo */
+  background-color: rgba(90, 90, 90, 0.35); /* gris + transparencia */
+  color: white;
+  backdrop-filter: blur(4px); /* leve desenfoque elegante */
+}
+.logo{
+  width: 70px;
+}
+
+.logo > img{
+  width:50px;
+}
+
+/* Links Desktop */
+.nav-links {
+
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .nav-links {
+    top: 50px;
+  }
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffea00;
+}
+
+/* Boton Hamburguesa */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+  background-color: aquamarine;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 3px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: rgba(0,0,0,0.7);
+    flex-direction: column;
+    width: 150px;
+    padding: 15px;
+    display: none;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}

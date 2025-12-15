@@ -1,0 +1,39 @@
+
+.footer {
+  text-align: center;
+  padding: 12px 10px; /* más bajo */
+  background: rgba(90, 90, 90, 0.35); /* gris transparente suave */
+  color: white;
+  backdrop-filter: blur(4px);
+}
+.footer p {
+  font-size: 0.9rem;
+  color:rgb(139, 3, 3);
+}
+.footer p:hover{
+  color:blue;
+}
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 8px;
+}
+
+.social a {
+  color: #ffea00;
+   font-size: 0.9rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.social a:hover {
+  color: white;
+}
+
+@media (max-width: 500px) {
+  .social {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

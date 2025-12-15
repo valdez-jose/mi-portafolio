@@ -1,0 +1,7 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+.contenido-principal {
+  min-height: 70vh; /* Ajusta si querés más/menos espacio */
+}
