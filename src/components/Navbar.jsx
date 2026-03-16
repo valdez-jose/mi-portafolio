@@ -8,6 +8,7 @@ const Navbar = () => {
 
   // Array de objetos para los links (más escalable)
   const navLinks = [
+    { name: "Galeria-san-luis", url: " https://valdez-jose.github.io/galeria-sanluis/" },
     { name: "Sobre mi", url: "https://valdez-jose.github.io/mi-primerproyecto-react/" },
     { name: "Proyecto 1", url: "https://valdez-jose.github.io/mi-trabajo2/" },
     { name: "Proyecto 2", url: "https://valdez-jose.github.io/proyecto-web/" },
