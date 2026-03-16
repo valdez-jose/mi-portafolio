@@ -31,9 +31,22 @@
   color: white;
 }
 
+/* Tablet */
+@media (max-width: 768px) {
+  .contenido-principal {
+    min-height: 80vh;
+  }
+}
+
+/* Mobile */
 @media (max-width: 500px) {
+  .contenido-principal {
+    min-height: 75vh;
+  }
+
   .social {
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
+    align-items: center;
   }
 }
