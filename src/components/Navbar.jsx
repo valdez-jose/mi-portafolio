@@ -1,30 +1,54 @@
 
-import {useState} from 'react'
+import { useState } from 'react';
 import "../css/Navbar.css";
-import logojose from "../assets/logo1-jose.png"
+import logojose from "../assets/logo1-jose.png";
 
 const Navbar = () => {
-     const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  // Array de objetos para los links (más escalable)
+  const navLinks = [
+    { name: "Sobre mi", url: "https://valdez-jose.github.io/mi-primerproyecto-react/" },
+    { name: "Proyecto 1", url: "https://valdez-jose.github.io/mi-trabajo2/" },
+    { name: "Proyecto 2", url: "https://valdez-jose.github.io/proyecto-web/" },
+    { name: "Proyecto 3", url: "https://valdez-jose.github.io/vivero-el-paso/" },
+    { name: "Github", url: "https://github.com/valdez-jose" },
+  ];
+
   return (
-    <div className='navbar'>
-    <h2 className="logo">
-      <img className='logo-jose' src={logojose} alt="" />
-    </h2>
-
-        <nav className={`nav-links ${open ? "open" : ""}`}>
-          <a href="https://valdez-jose.github.io/mi-primerproyecto-react/" target="_blank">Sobre mi</a>
-          <a href="https://valdez-jose.github.io/mi-trabajo2/" target="_blank">Proyecto 1</a>
-          <a href="https://valdez-jose.github.io/proyecto-web/" target="_blank">Proyecto 2</a>
-          <a href=" https://valdez-jose.github.io/vivero-el-paso/" target="_blank">Proyecto 3</a>
-          <a href="https://github.com/valdez-jose" target="_blank">Github</a>
-          
-        </nav>
-
-      <div className="hamburger" onClick={() => setOpen(!open)}>
-        <span></span><span></span><span></span><span></span>
+    <header className='navbar'>
+      {/* Contenedor Izquierdo: Logo */}
+      <div className="logo-container">
+        <h2 className="logo">
+          <img className='logo-jose' src={logojose} alt="Logo Jose" />
+        </h2>
       </div>
-    </div>
-  )
+
+      {/* Contenedor Central: Links */}
+      <nav className={`nav-links ${open ? "open" : ""}`}>
+        {navLinks.map((link, index) => (
+          <a 
+            key={index} 
+            href={link.url} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            onClick={() => setOpen(false)} // Cierra el menú al hacer click en móvil
+          >
+            {link.name}
+          </a>
+        ))}
+      </nav>
+
+      {/* Contenedor Derecho: Hamburguesa */}
+      <div className="hamburger-container">
+        <div className="hamburger" onClick={() => setOpen(!open)}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+  );
 }
 
-export default Navbar
+export default Navbar;
